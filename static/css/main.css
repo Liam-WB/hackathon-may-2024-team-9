@@ -1,5 +1,55 @@
 /* Main style sheet */
 
+/* Imports */
+
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+:root {
+    /* FONTS */
+    --main-font: 'Star Wars', sans-serif;
+
+    /* COLOR PALETTE */
+    --light-foreground: #f1ee8e;
+    --mid-foreground: #e5de00;
+    --dark-foreground: #e69b00;
+
+    --light-background: #3b444b;
+    --light-backgound-opaque: rgba(59,68,75,0.5);
+    --dark-background: #0e1111;
+    --dark-background-opaque: rgba(14,17,17,0.8);
+}
+
 body {
-    background-color: aqua;
+    background-color: var(--dark-background);
+    color: var(--light-foreground);
+}
+
+/* WebKit Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 18px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #000; /* Track color (black) */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-foreground); /* Handle color (blue) */
+    border: 2px solid #fff; /* White border */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light-foreground); /* Handle color on hover (dark blue) */
+}
+
+/* Firefox Scrollbar Styling */
+body {
+    scrollbar-width: thin;
+    /* scrollbar-color: #4287f5 #000; */
+}
+
+/* Adjust scrollbar corner */
+::-webkit-scrollbar-corner {
+    background: transparent; /* Hide scrollbar corner */
 }

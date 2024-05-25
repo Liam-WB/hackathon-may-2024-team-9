@@ -1,6 +1,16 @@
 {% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block nav_name %}Login{% endblock %}
+
 {% load i18n %}
 {% load allauth account %}
+
+{% block user_card_image %}
+{% static 'images/allauth_error_img/th (1).jpeg' %}
+{% endblock %}
+
 {% block head_title %}
     {% trans "Sign In" %}
 {% endblock head_title %}
@@ -22,8 +32,7 @@
         {% element form form=form method="post" action=login_url tags="entrance,login" %}
             {% slot body %}
                 {% csrf_token %}
-                {% element fields form=form unlabeled=True %}
-                {% endelement %}
+                {{ form|crispy }}
                 {{ redirect_field }}
             {% endslot %}
             {% slot actions %}

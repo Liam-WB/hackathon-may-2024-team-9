@@ -24,8 +24,7 @@ TEMPLATES_DIR = (os.path.join(BASE_DIR, "templates"), os.path.join(BASE_DIR, 'te
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = True
-# os.environ.get("DEV_PRODUCTION", False)
+DEBUG = os.environ.get("DEV_PRODUCTION", False)
 
 # I frame security setting
 X_FRAME_OPTIONS = "SAMEORIGIN"
@@ -49,6 +48,8 @@ INSTALLED_APPS = [
     # Others
     'cloudinary_storage',
     'cloudinary',
+    'crispy_forms',
+    'crispy_bootstrap4',
     # Allauth
     'allauth',
     'allauth.account',
@@ -70,6 +71,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'star_wars.urls'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 TEMPLATES = [
     {
